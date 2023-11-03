@@ -31,7 +31,7 @@ export const HeaderHome = () => {
   const watchTrailer = (linkTrailer) => {
     window.open(linkTrailer);
   };
-
+  
   //Prev Slide
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;

@@ -5,20 +5,23 @@ import { fetchDataMovieDetail } from "../../services/data-movie/get-data-movie-d
 import { FaPlayCircle } from "react-icons/fa";
 import { AiOutlineStar } from "react-icons/ai";
 import { CookieKeys, CookieStorage } from "../../utils/cookies";
+import { getActDetail } from "../../redux/actions/movieActions/getDetailMovie";
+import { useDispatch, useSelector } from "react-redux";
 
 export const DetailMovie = () => {
   const movieId = useParams();
-  const [details, setdetails] = useState("");
+  const details = useSelector((store) => store.detail.detail );
   const token = CookieStorage.get(CookieKeys.AuthToken);
   const genres = details && details.genres.map((gen) => gen.name).join(", ");
+  console.log(details, "details");
 
-  const getmovie = async () => {
-    const datapopular = await fetchDataMovieDetail(token, movieId);
-    setdetails(datapopular.data);
+  const dispatch = useDispatch()
+  const getDetail = () => {
+    dispatch(getActDetail(movieId.movieId))
   };
 
   useEffect(() => {
-    getmovie();
+    getDetail();
   }, [movieId.movieId]);
 
   return (

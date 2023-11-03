@@ -7,7 +7,7 @@ export const SearchMovie = () => {
   const navigate = useNavigate();
   const { namemovie } = useParams();
   const [movies, setMovies] = useState([]);
-  const [page, setpage] = useState(1);
+  const [page] = useState(1);
 
   const { data: searchM, isSuccess } = useSearchMovieDataQuery({
     page: page,

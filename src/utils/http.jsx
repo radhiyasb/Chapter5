@@ -8,4 +8,5 @@ const http = axios.create({
     Authorization: `Bearer ${process.env.REACT_APP_KEY}`,
   },
 });
+
 export default http;

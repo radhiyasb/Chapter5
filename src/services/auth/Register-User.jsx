@@ -9,5 +9,4 @@ const registerUser = async (input) => {
 const useCreateUser = () => {
     return useMutation(registerUser)
 }
-
 export {registerUser, useCreateUser}

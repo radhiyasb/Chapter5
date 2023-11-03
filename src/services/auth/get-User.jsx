@@ -5,11 +5,11 @@ import { toast } from "react-toastify";
 
 const fetchUserData = async ({ queryKey }) => {
     const [_key] = queryKey;
-
     try {
         const { data } = await http3.get(_key);
         
         return data;
+    
     } catch (err) {
         if (err.response.status === 401) {
             toast.error("Login Dulu BOSSS!!!");

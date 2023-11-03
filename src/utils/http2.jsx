@@ -17,5 +17,4 @@ const http2 = axios.create({
  }
 });
 
-
 export default http2;

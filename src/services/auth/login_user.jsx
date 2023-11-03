@@ -25,6 +25,5 @@ const LoginUser = async (input) => {
 const useLoginUser = () => {
     return useMutation(LoginUser)
   };
+  export { LoginUser , useLoginUser }
 
-
-export { LoginUser , useLoginUser }

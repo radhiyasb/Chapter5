@@ -5,7 +5,6 @@ const initialState = {
     isLogin : "",
     user : ""
 }
-
 const authLoginSlice = createSlice({
     name : "loginAuth",
     initialState ,
@@ -23,6 +22,4 @@ const authLoginSlice = createSlice({
 })
 
 export const { setToken, setIsLoggedIn, setUser } = authLoginSlice.actions;
-
-
 export default authLoginSlice.reducer;

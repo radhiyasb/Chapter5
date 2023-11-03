@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { API_ENDPOINT } from "../../utils/api-endpoint";
-import http3 from "../../utils/http3";
 import http2 from "../../utils/http2";
 
 

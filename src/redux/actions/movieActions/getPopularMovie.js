@@ -5,7 +5,6 @@ export const getActPopular = () => async (dispatch)=> {
     return getPopular()
     .then((response) => {
         const movies = response.data.data;
-
         dispatch(updateMovie(movies));
     })
     .catch((err) => {});

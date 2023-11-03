@@ -17,17 +17,9 @@ export const MoviePopular = () => {
 
   const dispatch = useDispatch()
   const getmovie = () => {
-    // const datapopular = await fetchDataMoviePopular(token);
-    // setdata(datapopular.data);
     dispatch(getActPopular())
 
   };
-
-  // useEffect(() => {
-  //   if (token) {
-  //     getmovie();
-  //   }
-  // }, [token]);
 
   useEffect(()=> {
     getmovie();

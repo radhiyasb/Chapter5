@@ -12,14 +12,10 @@ export const LoginUser = (input) => (dispatch) => {
     CookieStorage.set(CookieKeys.AuthToken, result.data.data.token)
     dispatch(setToken(result.data.data.token));
     return true;
-    
 }).catch((err) => {
 
 });
 }
-
-
-
 
 export const LogOut = (input) => (dispatch) => {
     dispatch(setToken(undefined));

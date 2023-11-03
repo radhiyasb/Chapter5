@@ -6,6 +6,7 @@ import rootReducer from '../reducers';
 export default configureStore({
   //wadah yang disimpan
   reducer: rootReducer,
+  
   //redux thunk menjadi middleware
   middleware: (getMiddleware)=>getMiddleware().concat(thunk)
 });
