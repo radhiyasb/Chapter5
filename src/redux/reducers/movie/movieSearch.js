@@ -12,8 +12,8 @@ const movieSearch = createSlice({
     },
 });
 
-const movieesearch = movieSearch.reducer;
+const moviesearch = movieSearch.reducer;
 const {searchMovie} = movieSearch.actions;
 
 export {searchMovie};
-export default movieesearch;
+export default moviesearch;
