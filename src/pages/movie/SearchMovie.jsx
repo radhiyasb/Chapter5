@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { NavbarHome } from "../../assets/component/Header/NavbarHome";
 import { useSearchMovieDataQuery } from "../../services/data-movie/get-data-search-movie";
 import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getActSearch } from "../../redux/actions/movieActions/getSearchMovie";
 
 export const SearchMovie = () => {
   const navigate = useNavigate();
@@ -14,15 +16,35 @@ export const SearchMovie = () => {
     query: namemovie,
   });
 
-  const searchMovies = async () => {
-    if (searchM) {
-      setMovies(searchM.data);
-    }
-  };
-  useEffect(() => {
-    searchMovies();
-  }, [namemovie, isSuccess]);
+  const dispatch = useDispatch();
+  const [search, setsearch] = useState([]);
+  const [loading, setloading] = useState(false);
 
+  // const searchMovies = async () => {
+  //   if (searchM) {
+  //     setMovies(searchM.data);
+  //   }
+  // };
+  // useEffect(() => {
+  //   searchMovies();
+  // }, [namemovie, isSuccess]);
+
+  useEffect(() => {
+    setloading(true);
+    dispatch(getActSearch(namemovie))
+      .then((result) => {
+        setloading(false);
+      })
+      .catch((err) => {
+        setloading(false);
+      });
+  }, [namemovie, dispatch]);
+
+  useEffect(() => {
+    if (!loading) {
+      setsearch(movies);
+    }
+  }, [movies, loading]);
   return (
     <div className="bg-black">
       <div className="text-center px-20 border-b-2 border-red-500 pt-20 bg-black">

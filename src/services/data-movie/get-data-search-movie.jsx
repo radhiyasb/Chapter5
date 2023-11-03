@@ -14,6 +14,6 @@ const useSearchMovieDataQuery = (options) => {
 
 export { fetchSearchDataMovie, useSearchMovieDataQuery };
 
-export const getSearch = async () => {
-  return await http3.get(API_ENDPOINT.Search);
+export const getSearch = async (page,query) => {
+  return await http3.get(API_ENDPOINT.Search (page,query));
 }
